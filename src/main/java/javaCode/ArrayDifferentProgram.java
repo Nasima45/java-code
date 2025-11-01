@@ -34,6 +34,7 @@ public class ArrayDifferentProgram {
         int[] reversed = reverseArray(arr, n);
         for (int x : reversed) System.out.print(x + " ");
         System.out.println();
+        findSumOfElements(arr,n);
 
         //PalindromeArray(arr, n);
     }
@@ -168,5 +169,21 @@ public class ArrayDifferentProgram {
         for (int i = 0; i < n3; i++) {
             System.out.println(newArr[i]);
         }
+    }
+    public static void findSumOfElements(int[] arr, int n){
+        int sum=9;
+        boolean found=false;
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if((arr[i]+arr[j])==sum){
+                    System.out.println(arr[i]+ ","+ arr[j]);
+                    found=true;
+                }
+            }
+        }
+        if(!found){
+            System.out.println(sum + " is not present in our current array ");
+        }
+
     }
 }

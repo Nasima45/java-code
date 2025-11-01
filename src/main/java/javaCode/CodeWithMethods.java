@@ -1,7 +1,6 @@
 package javaCode;
 
 import java.util.logging.Logger;
-import java.util.logging.Level;
 
 
 public class CodeWithMethods {
@@ -17,7 +16,7 @@ public class CodeWithMethods {
         factorNumber(5);
         fibonacci();
         fibonacci_ForLoop();
-        armstongNum();
+        ArmstrongNum();
 
     }
 
@@ -100,7 +99,7 @@ public class CodeWithMethods {
 
         }
     }
-    public static void armstongNum(){
+    public static void ArmstrongNum(){
         int n=13;
         int temp=n;
         int rem;
