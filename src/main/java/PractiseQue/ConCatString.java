@@ -15,6 +15,7 @@ public class ConCatString {
             names[i]=sc.nextLine();
         }
         System.out.println(concat(names));
+        System.out.println(concatination(names));
 
     }
     public static String  concat(String ...name){
@@ -23,5 +24,12 @@ public class ConCatString {
             addOne=addOne.concat(name[i]);
         }
         return addOne;
+    }
+    public static String  concatination(String ...name){
+        StringBuilder sb =new StringBuilder();
+        for(String str:name){
+            sb.append(str);
+        }
+        return sb.toString();
     }
 }
