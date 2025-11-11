@@ -21,19 +21,19 @@ public class UniqueElement {
         int n = arr.length;
         List<Integer> un = new ArrayList<>();
 
-        for (int i = 0; i < n; i++) {
+        for (int elem : arr) {
             // If element not already checked, process it
-            if (!un.contains(arr[i])) {
-                un.add(arr[i]); // Add to unique list so we don’t count it again
+            if (!un.contains(elem)) {
+                un.add(elem); // Add to unique list so we don’t count it again
 
                 int count = 0;
                 // Count how many times this element appears in the whole array
                 for (int j = 0; j < n; j++) {
-                    if (arr[i] == arr[j]) {
+                    if (elem == arr[j]) {
                         count++;
                     }
                 }
-                System.out.println("Count of " + arr[i] + " is " + count);
+                System.out.println("Count of " + elem + " is " + count);
             }
         }
 
