@@ -6,21 +6,20 @@ public class TrafficLightThread extends Thread {
 
     public TrafficLightThread(TrafficColor color, Object lock) {
         this.color = color;
-        this.lock=lock;
+        this.lock = lock;
     }
-
 
 
     @Override
     public void run() {
-        synchronized (lock){
-        System.out.println("active  : " + color);
-        try {
-
-            Thread.sleep(color.getOnTimeMilliS());
-        } catch (InterruptedException e) {
-            System.out.println(e.getMessage());
+        synchronized (lock) {
+            System.out.println("active  : " + color);
+            try {
+                Thread.sleep(color.getOnTimeMilliS());
+            } catch (InterruptedException e) {
+                System.out.println(e.getMessage());
+            }
+            System.out.println("inactive active : " + color);
         }
-        System.out.println("inactive active : " + color);
-    }}
+    }
 }
