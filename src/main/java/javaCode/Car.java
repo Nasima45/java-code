@@ -1,7 +1,7 @@
 package javaCode;
 
 public class Car {
-    final int CONS_VALUE=9;
+    final int CONS_VALUE = 9;
     String name;
     int price;
     int wheels;
@@ -22,7 +22,7 @@ public class Car {
     }
 
     static void main() {
-        Car c=new Car("swift",1200,4);
+        Car c = new Car("swift", 1200, 4);
         System.out.println(c);
 
     }
