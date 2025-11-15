@@ -98,6 +98,33 @@ public class UniqueElement {
             }
         }
     }
+    // Method 1 → Remove duplicate numbers + count frequency
+    public static void removeDup(int arr[]) {
+        int n = arr.length;
+
+        for (int i = 0; i < n; i++) {
+            boolean isDup = false;
+
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    isDup = true;
+                    break;
+                }
+            }
+
+            if (!isDup) {
+                int count = 0;
+
+                for (int k = 0; k < n; k++) {
+                    if (arr[k] == arr[i]) {
+                        count++;
+                    }
+                }
+
+                System.out.println(arr[i] + " occurs " + count + " times");
+            }
+        }
+    }
 
     static void removeDuplicateChar(String name) {
         char words[] = name.toCharArray();
