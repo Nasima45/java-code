@@ -3,12 +3,19 @@ package PractiseQue;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class UniqueElement {
     static void main() {
         int[] arr = {3, 2, 1, 3, 4, 2, 5, 6, 5};
         String name = "nasima aktar";
         removeDuplicateChar(name);
-
+        String sub=name.substring(2,4);
+        String mail="nasima@gmail.vom";
+        int index=mail.indexOf("@");
+        String username=mail.substring(0,index);
+        String domain =mail.substring(index+1);
+        System.out.println(username +" , " + domain);
+        System.out.println(sub);
         // Method 1: Find unique elements and their counts
         unique(arr);
 
