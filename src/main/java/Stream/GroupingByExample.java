@@ -1,16 +1,23 @@
 package Stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 class Employee {
     String dept;
     String name;
+    Integer salary;
 
-    public Employee(String dept, String name) {
+    public Integer getSalary() {
+        return salary;
+    }
+
+    public Employee(String dept, String name, Integer salary) {
         this.dept = dept;
         this.name = name;
+        this.salary=salary;
     }
 
     public String getDept() {
@@ -19,9 +26,10 @@ class Employee {
 
     @Override
     public String toString() {
-        return "employee{" +
+        return "Employee{" +
                 "dept='" + dept + '\'' +
                 ", name='" + name + '\'' +
+                ", salary=" + salary +
                 '}';
     }
 
@@ -45,12 +53,16 @@ public class GroupingByExample {
         System.out.println(age.stream().filter(x->x%2==0).mapToInt(Integer::intValue).sum());
         System.out.println(age.stream().filter(x->x%2==0).reduce((a,b)->a+b));
         List<Employee>eployees= Arrays.asList(
-                new Employee("IT", "Kuhu"),
-                new Employee("DEV", "Nasu"),
-                new Employee("IT", "Aditi"),
-                new Employee("DEV", "Paro")
+                new Employee("IT", "Kuhu",900),
+                new Employee("DEV", "Nasu",8900),
+                new Employee("IT", "Aditi",500),
+                new Employee("DEV", "Paro",7000)
         );
         Map<String,List<Employee>> bydept=eployees.stream().collect(Collectors.groupingBy(Employee::getDept));
+        Map<String,List<Employee>> byName = eployees.stream().collect(Collectors.groupingBy(Employee::getName));
+        List<Employee> sortedemp=eployees.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).toList();
+        System.out.println(sortedemp);
+        System.out.println(byName);
         System.out.println(bydept);
     }
 }
