@@ -10,6 +10,19 @@ public class ReverseArrayTest {
         System.out.println(list);
         int arr[]={9,8,7,6};
 
+        String name = "nasima aktar kuhu";
+        String words[]=name.split(" ");
+        int left=0;
+        int right=words.length-1;
+        while(left<right){
+            String temp=words[left];
+            words[left]= words[right];
+            words[right]= temp;
+            left++;
+            right--;
+        }
+        System.out.println(Arrays.toString(words));
+
         String str[]={"par","abc","cad"};
         revStr4(str);
 //        rev1(arr);

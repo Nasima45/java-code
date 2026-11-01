@@ -1,15 +1,12 @@
 package PractiseQue;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class ReverseWords {
     static void main() {
-        String name= "  i am kuhu";
-        //char words[]=name.toCharArray();
-        String rev=" ";
-        for(int i=0;i<name.length();i++){
-            rev=name.charAt(i)+rev;
-        }
-        System.out.println(rev);
-        reverse(name);
+        String name= "i am kuhu";
+        reverse2(name);
 
     }
     public static void reverse(String name){
@@ -22,5 +19,20 @@ public class ReverseWords {
         System.out.println(rev.trim());
         
 
+    }
+    public static void reverse2(String name){
+        String words[]=name.split(" ");
+        int left=0;
+        int right=words.length-1;
+
+        while(left<right){
+            String temp=words[left];
+            words[left]=words[right];
+            words[right] = temp;
+            left++;
+            right--;
+        }
+        String afterReverse= Arrays.stream(words).collect(Collectors.joining(" "));
+        System.out.println(afterReverse);
     }
 }

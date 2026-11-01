@@ -8,8 +8,17 @@ public class TwoSum {
     static void main() {
         int arr[] = {8, 7, 6, 5, 9};
         int target = 14;
-        twoSumBetter(arr, target);
+        //twoSumBetter(arr, target);
         //System.out.println(Arrays.toString(twoSum3(arr, target)));
+        Map<Integer,Integer> map=new HashMap<>();
+        for(int i=0;i<arr.length;i++){
+            int complemt=target-arr[i];
+            if(map.containsKey(complemt)){
+                System.out.println(map.get(complemt)+","+i);
+            }
+            map.put(arr[i],i);
+        }
+
 
     }
 
